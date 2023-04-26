@@ -6,7 +6,13 @@ const getItemList = document.getElementById('getItemList')
 itemList.addEventListener('click',buyOne);
 itemList.addEventListener('click',buyTwo);
 itemList.addEventListener('click',buyThree)
-
+document.addEventListener('DOMContentLoaded',()=>{
+    getItems()
+    .then((data)=>{
+        displayItems(data)
+    })
+    .catch(err=>alert(err))
+})
 addForm.addEventListener('submit',(e)=>{
     e.preventDefault()
     let name = document.getElementById('name').value;
@@ -31,8 +37,9 @@ addForm.addEventListener('submit',(e)=>{
         .then(()=>{
         alert("Item Added")
         addForm.reset()
+        location.reload()
         })
-        .catch(err=>alert(JSON.stringify(err)))
+        .catch(err=>alert(err))
     } 
 })
 getItemList.addEventListener('click',()=>{
@@ -40,7 +47,7 @@ getItemList.addEventListener('click',()=>{
     .then((data)=>{
         displayItems(data)
     })
-    .catch(err=>alert(err.stack))
+    .catch(err=>alert(err))
 })  
 function buyOne(e){
     if (e.target.classList.contains('buyOne')){
@@ -52,7 +59,10 @@ function buyOne(e){
             data.quantity=data.quantity-1;
             delete data._id
             putItem(id,data)
-            .then(()=>alert('Inventory Updated'))
+            .then(()=>{
+                alert('Inventory Updated')
+                location.reload()
+            })
             .catch(err=>alert(JSON.stringify(err)))
         }
         })
@@ -70,7 +80,12 @@ function buyTwo(e){
             data.quantity=data.quantity-2;
             delete data._id;
             putItem(id,data)
-            .then(()=>alert('Inventory Updated'))
+            .then(()=>{
+                alert('Inventory Updated')
+                location.reload()
+            }
+                 
+            )
             .catch(err=>alert(JSON.stringify(err)))
         }
         })
@@ -87,7 +102,10 @@ function buyThree(e){
             data.quantity=data.quantity-3;
             delete data._id;
             putItem(id,data)
-            .then(()=>alert('Inventory Updated'))
+            .then(()=>{
+                alert('Inventory Updated')
+                location.reload()
+            })
             .catch(err=>alert(JSON.stringify(err)))
         }
         })

@@ -1,6 +1,6 @@
 
 export const axiosInstance = axios.create({
-    baseURL: 'https://crudcrud.com/api/b2c42124c7414ebeb72a886560aaa697'
+    baseURL: 'https://crudcrud.com/api/6a57fcad7c4a42358e84ace8d7a42c6c'
 })
 
 export function postItem(body){
