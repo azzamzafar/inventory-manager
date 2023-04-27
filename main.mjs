@@ -171,7 +171,6 @@ function createbuyThreeButton(){
 
 function parseId(listelem){
     const text = listelem.textContent.split(' ');
-    let id = null;
     for (const sub of text){
         const subsplit = sub.split(":")
         if (subsplit.length>1&&subsplit[0]=='id')return subsplit[1]

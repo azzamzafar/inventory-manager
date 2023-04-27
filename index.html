@@ -10,6 +10,11 @@
     </title>
     </head>
     <body>
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+              <span class="navbar-brand mb-0 h1">Inventory Manager</span>
+            </div>
+          </nav>
         <div class="container">
             
             <form id="addInventory">
@@ -30,7 +35,7 @@
                     <label for="quantity" class="control-label">Quantity</label>
                     <input type="number" placeholder='Item Quantity' class="form-control" id="quantity">
                     <button type="submit" class="btn btn-primary">Add Item</button>
-                    <button type="button" class="btn btn-primary" id="getItemList">Get Items</button> 
+                    <!-- <button type="button" class="btn btn-primary" id="getItemList">Get Items</button>  -->
                 </div>
             </form>
           
@@ -44,5 +49,5 @@
         </div>
     </body>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script type="module"src="main.mjs"></script>
+    <script type="module"src="async_main.mjs"></script>
 </html>
